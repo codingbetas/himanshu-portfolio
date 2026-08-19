@@ -1,17 +1,18 @@
 import { NextResponse } from "next/server";
 
-interface QuotableResponse {
-  content?: string;
+interface Quote {
   author?: string;
+  text?: string;
 }
 
-interface QuoteResponse {
+interface QuoteType {
   text: string;
   author: string;
   profession: string;
 }
 
-const QUOTABLE_API = "https://api.quotable.io/random";
+const QUOTES_URL =
+  "https://raw.githubusercontent.com/dwyl/quotes/main/quotes.json";
 
 function normalize(value: string): string {
   return value.replace(/\s+/g, " ").trim();
@@ -22,29 +23,12 @@ function getProfession(author: string): string {
 
   if (
     [
-      "aristotle",
-      "plato",
-      "socrates",
-      "seneca",
-      "epictetus",
-      "marcus aurelius",
-      "nietzsche",
-      "kant",
-      "descartes",
-      "confucius",
-    ].some((person) => name.includes(person))
-  ) {
-    return "PHILOSOPHER";
-  }
-
-  if (
-    [
       "einstein",
       "newton",
-      "tesla",
       "curie",
-      "darwin",
       "hawking",
+      "darwin",
+      "tesla",
       "feynman",
       "bohr",
       "galileo",
@@ -71,16 +55,31 @@ function getProfession(author: string): string {
   if (
     [
       "shakespeare",
-      "wilde",
-      "hemingway",
-      "orwell",
+      "austen",
+      "dickens",
       "tolstoy",
       "dostoevsky",
-      "austen",
       "twain",
+      "wilde",
+      "hemingway",
     ].some((person) => name.includes(person))
   ) {
     return "WRITER";
+  }
+
+  if (
+    [
+      "aristotle",
+      "plato",
+      "socrates",
+      "seneca",
+      "nietzsche",
+      "kant",
+      "descartes",
+      "confucius",
+    ].some((person) => name.includes(person))
+  ) {
+    return "PHILOSOPHER";
   }
 
   return "THINKER";
@@ -88,53 +87,59 @@ function getProfession(author: string): string {
 
 export async function GET() {
   try {
-    const response = await fetch(QUOTABLE_API, {
+    const response = await fetch(QUOTES_URL, {
       cache: "no-store",
     });
 
     if (!response.ok) {
       throw new Error(
-        `Quotable API returned ${response.status}`
+        `Quote dataset returned ${response.status}`
       );
     }
 
-    const data: QuotableResponse =
-      await response.json();
+    const data: Quote[] = await response.json();
 
-    if (!data.content || !data.author) {
-      throw new Error(
-        "Invalid quote received from Quotable API"
-      );
+    const validQuotes: QuoteType[] = data
+      .filter((item) => item.text && item.author)
+      .map((item) => {
+        const text = normalize(item.text!);
+        const author = normalize(item.author!);
+
+        return {
+          text,
+          author,
+          profession: getProfession(author),
+        };
+      });
+
+    if (validQuotes.length === 0) {
+      throw new Error("No quotes available");
     }
 
-    const text = normalize(data.content);
-    const author = normalize(data.author);
+    const selected =
+      validQuotes[
+        Math.floor(Math.random() * validQuotes.length)
+      ];
 
-    const quote: QuoteResponse = {
-      text,
-      author,
-      profession: getProfession(author),
-    };
-
-    return NextResponse.json(quote, {
+    return NextResponse.json(selected, {
+      status: 200,
       headers: {
         "Cache-Control":
           "no-store, no-cache, must-revalidate",
       },
     });
   } catch (error) {
-    console.error(
-      "Quote API failed:",
-      error
-    );
+    console.error("Quote API failed:", error);
 
     return NextResponse.json(
       {
-        error:
-          "Quote service temporarily unavailable.",
+        text:
+          "Architecting the unseen digital core where scale, distribution, and resilience intersect.",
+        author: "Himanshu Rathod",
+        profession: "SYSTEM ARCHITECT",
       },
       {
-        status: 503,
+        status: 200,
         headers: {
           "Cache-Control": "no-store",
         },
