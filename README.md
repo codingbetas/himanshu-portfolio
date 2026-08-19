@@ -2,9 +2,9 @@
 
 > A modern software engineering portfolio focused on backend systems, AI/ML applications, full-stack development, APIs, authentication, and scalable software architecture.
 
-🌐 **Live Portfolio:** Coming soon
+**Live Portfolio:** [View Portfolio](https://himanshu-portfolio-murex-rho.vercel.app/)
 
-📧 **Email:** codewithhr@gmail.com
+📧 **Email:** [codewithhr@gmail.com](mailto:codewithhr@gmail.com)
 
 💼 **LinkedIn:** [Himanshu Rathod](https://linkedin.com/in/himanshu-rathod-5815991bb)
 
@@ -135,15 +135,9 @@ JWT
 
 ### Links : 
 
-🌐 Live Application:
-```
-https://supportflow-crm-production.up.railway.app/
-```
+🌐 **Live Application:** [Open Live Application](https://supportflow-crm-production.up.railway.app/)
 
-💻 Source Code:
-```
-https://github.com/codingbetas/supportflow-crm
-```
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/supportflow-crm)
 
 ## 2. Mason Home Dashboard
 
@@ -170,10 +164,8 @@ Data Visualization
 
 ### Links: 
 
-💻 Source Code
-```
-https://github.com/codingbetas/mason-home-dashboard
-```
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/mason-home-dashboard)
+
 
 ## 3. SnapURL Analytics Platform
 
@@ -203,15 +195,10 @@ Tailwind CSS
 
 ### Links:
 
-🌐 Live Application:
-```
-https://snapurl-url-shortener.vercel.app/
-```
+🌐 **Live Application:** [Open Live Application](https://snapurl-url-shortener.vercel.app/)
 
-💻 Source Code:
-```
-https://github.com/codingbetas/snapurl-url-shortener
-```
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/snapurl-url-shortener)
+
 
 ## 4. SaaS Subscription System
 
@@ -240,15 +227,10 @@ JWT
 
 ### Links: 
 
-🌐 Live Application
-```
-https://saas-subscription-system.vercel.app/
-```
+🌐 **Live Application:** [View Live Application](https://saas-subscription-system.vercel.app/)
 
-💻 Source Code
-```
-https://github.com/codingbetas/saas-subscription-system
-```
+
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/saas-subscription-system)
 
 ## 5. AI Resume Matcher API
 
@@ -256,7 +238,7 @@ https://github.com/codingbetas/saas-subscription-system
 
 A FastAPI-based machine learning service that evaluates the similarity between candidate resumes and job descriptions.
 
-## Approach: 
+### Approach: 
 The system uses:
 
 - Text preprocessing
@@ -286,15 +268,9 @@ REST API
   
  ### Links:
 
-🌐 Swagger API:
-```
-https://ai-powered-resume-matching.onrender.com/docs
-```
+🌐 **Swagger API:** [View Swagger API](https://ai-powered-resume-matching.onrender.com/docs)
 
-💻 Source Code:
-```
-https://github.com/codingbetas/ai-powered-resume-matching
-```
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/ai-powered-resume-matching)
 
 ## 6. FraudShield AI Engine
 
@@ -321,10 +297,8 @@ Machine Learning
 ```
 ### Links : 
 
-💻 Source Code
-```
-https://github.com/codingbetas/fraudshield-ai
-```
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/fraudshield-ai)
+
 
 ## 7. Beautician Booking Engine
 
@@ -352,10 +326,8 @@ SQLite
 
 ### Links:
 
-💻 Source Code
-```
-https://github.com/codingbetas/beautician-booking
-```
+💻 **Source Code:** [View GitHub Repository](https://github.com/codingbetas/beautician-booking)
+
 
 ## 🧠 Engineering Focus
 
@@ -374,7 +346,6 @@ My projects are primarily focused on understanding how applications behave beyon
 - API validation
 - Error handling
 - Service architecture
-- Database Systems
 
 ## Database Systems
 
@@ -467,7 +438,7 @@ Responsible for:
 
 Provides the backend endpoint used by the portfolio's quote stream.
 
-The endpoint is responsible for processing and filtering quote data before returning a quote to the frontend.
+The endpoint retrieves a random quote from the external quote dataset and returns a normalized quote object to the frontend.
 
 ## 💬 Global Mindset Stream
 
@@ -494,8 +465,8 @@ The quote stream is designed to:
 
 - Provide perspectives from different parts of the world
 - Maintain diverse global perspectives
-- Reduce duplicate quotes during a browser session
-- Keep the displayed quote stream varied
+- Retrieve randomly selected quotes from the external dataset
+- Normalize quote data before returning it
 - Separate quote selection logic from the frontend UI
 
 ## 🎨 Design Philosophy
@@ -601,36 +572,30 @@ git status
 
 ### 🌐 Deployment
 
-The portfolio is designed to be deployable using modern Next.js hosting platforms.
+The portfolio is deployed on Vercel and connected to the GitHub `main` branch for production deployments.
 
-Potential deployment platforms include:
+🌐 **Live Portfolio:** [View Portfolio](https://himanshu-portfolio-murex-rho.vercel.app/)
 
-- Vercel
-- Railway
-- Other Node.js-compatible hosting platforms
+The project can also be deployed to other Next.js-compatible hosting platforms such as Railway or similar Node.js hosting providers.
 
-Once the portfolio is deployed, update the Live Portfolio link at the top of this README.
+For deployment, clone the repository, install the dependencies, and use the standard Next.js build and start commands described above.
 
 ### 🔐 Environment Variables
 
+The portfolio currently does not require sensitive environment variables.
+
 If environment variables are introduced in the future, they should be stored locally in:
-```
-.env.local
-```
+
+`.env.local`
 
 Sensitive credentials should never be committed to GitHub.
-
-Example:
-```
-API_KEY=your_api_key_here
-```
 
 For production deployments, configure secrets through the hosting provider's environment variable settings.
 
 ## 📈 Future Improvements
 
 Potential future improvements include:
-- Improved quote-source aggregation
+- Additional quote-source integrations
 - Larger curated quote datasets
 - Persistent quote history
 - More detailed project case studies
@@ -661,20 +626,10 @@ I'm particularly interested in roles where I can work on real systems, solve eng
 
 If you'd like to discuss software engineering, backend development, AI/ML applications, or potential opportunities:
 
-### Email:
-```
-codewithhr@gmail.com
-```
+📧 **Email:** [codewithhr@gmail.com](mailto:codewithhr@gmail.com)
 
-### LinkedIn:
-```
-https://linkedin.com/in/himanshu-rathod-5815991bb
-```
+💼 **LinkedIn:** [Himanshu Rathod](https://linkedin.com/in/himanshu-rathod-5815991bb)
 
-### GitHub:
-```
-https://github.com/codingbetas
-```
 
 ## 📄 License
 
