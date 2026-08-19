@@ -218,8 +218,9 @@ A backend-focused SaaS subscription management system implementing user authenti
   
 ### Technology
 ```
-FastAPI
+Next.js
 TypeScript
+FastAPI
 SQLite
 SQLAlchemy
 JWT
